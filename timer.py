@@ -15,32 +15,20 @@ def timerr(s , P_O_N , SH_O_N) :
     if P_O_N != 'y' and P_O_N != 'n' :
         print(ERROR_p_o_n)
         return
+    #if the entered value in (P_O_N) was 'y' or 'n', make it a lowercase
+    P_O_N = P_O_N.lower()
 
     #check if the entered value in (SH_O_N) is 'n' or 'y'
     if SH_O_N != 'y' and SH_O_N != 'n' :
         print(ERROR_shape)
         return
-
-    #check if the (P_O_N) is "str", make it a lowercase
-    try :
-        P_O_N = P_O_N.lower()
-    #if (P_O_N) isn't "str" print an error
-    except :
-        print(ERROR_p_o_n)
-        return
-
-    #check if the (SH_O_N) is "str", make it a lowercase
-    try :
-        SH_O_N = SH_O_N.lower()
-    #if (P_O_N) isn't "str" print an error
-    except :
-        print(ERROR_shape)
-        return
+    #if the entered value in (SH_O_N) was 'y' or 'n', make it a lowercase
+    SH_O_N = SH_O_N.lower()
 
     #make sure that (s) is an "intiger"
     try :
         s = int(s)
-    #if (s) isn't an "intiger"
+    #if (s) isn't an "intiger" print an error
     except :
         print(ERROR_second)
         return
@@ -54,10 +42,10 @@ def timerr(s , P_O_N , SH_O_N) :
         speed(0)
         delay(0)
 
-    #draw a second hand without a hour hand without the second hand
+        #draw a second hand without a hour hand without the second hand
         clock()
         
-    #draw a second hand for the timer wich is able to move
+        #draw a second hand for the timer wich is able to move
         player1 = Turtle()
         player1.shape("triangle")
         player1.shapesize(0.01 , 15 , 10)
@@ -115,10 +103,10 @@ def clock() :
 
 #MAIN________________________________________________________start((
 
-#make a error massage for each error
+#make an error massage for each error
 #an error for when the (P_O_N) wasn't a "string" or wasn't 'n' or 'y'
 ERROR_p_o_n = "\nError : please enter 'y' or 'n' in (P_O_N)\n"
-#an error for when the (s) wasn't an "intiger" and it's more than 1
+#an error for when the (s) wasn't an "intiger" and it's not more than 1
 ERROR_second = "\nError : please enter a ((number)) bigger than '1' in (second)\n"
 #an error for when the (SH_O_N) wasn't 'n' or 'y'
 ERROR_shape = "\n Error : please enter 'y' or 'n' in (SH_O_N)\n"
